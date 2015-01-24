@@ -1,0 +1,24 @@
+package satbruteforce;
+
+import java.io.IOException;
+import java.util.Scanner;
+
+public class SBFRun {
+    
+    public static void main(String[] args)
+    { 
+        TextFileReader tfr = new TextFileReader();
+        
+	Scanner user_input = new Scanner( System.in );
+        System.out.print("Enter Absolute Path of Input File: ");
+	String file_path = user_input.next();
+	try 
+        {
+		System.out.println(tfr.returnFileData(file_path));
+                
+	} catch (IOException e) 
+        {
+            System.out.println("File not found with path: " + file_path);
+        }
+    }
+}
